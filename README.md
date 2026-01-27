@@ -5,39 +5,37 @@
 - models.py: Defines the neural network architecture used in the project.
 - utils.py: Contains utility functions used in the project.
 
-# Construct experimental datasets
+# Experimental Dataset Construction
 
+The datasets used for 1-order, 2-order, and 3-order recommendation are constructed based on the cloud API invocation information of mashups.
 
-The 1-order, 2-order, and 3-order datasets used in the experiment are built based on the application invoked API, for example, there is a application, and its invoked API is shown in the following table
+For example, given a mashup and the cloud APIs it invokes as shown below:
 
-application| invoked API
--------- | -----
-LocEight DATA| Flickr, Google AdWords, Google Maps, GeoNames
+| Mashup        | Invoked cloud APIs |
+|----| -- |
+| TravelAssist  |Twitter, OpenWeather, Google Maps, Yelp|
 
-Based on the above application, we can build datasets for 1-, 2-, and 3-order dataset, as shown in the following table
+Based on this mashup, we can construct datasets for 1-order, 2-order, and 3-order recommendation as follows.
 
+| 1-order Recommendation Dataset               |
+|----------------------------------------------|
+| (Twitter) → (OpenWeather, Google Maps, Yelp) |
+| (OpenWeather) → (Twitter, Google Maps, Yelp) |
+| (Google Maps) → (Twitter, OpenWeather, Yelp) |
+| (Yelp) → (Twitter, OpenWeather, Google Maps) |
 
-1-order dataset|
----- | 
-(Flickr) -> (Google AdWords, Google Maps, GeoNames)
-(Google AdWords) -> (Flickr, Google Maps, GeoNames)
-(Google Maps) -> (Flickr, Google AdWords, GeoNames)
-(GeoNames) -> (Flickr, Google AdWords, Google Maps)
+| 2-order Recommendation Dataset                |
+|-----------------------------------------------|
+| (Twitter, OpenWeather) → (Google Maps, Yelp)  |
+| (Twitter, Google Maps) → (OpenWeather, Yelp)  |
+| (Twitter, Yelp) → (OpenWeather, Google Maps)  |
+| (OpenWeather, Google Maps) → (Twitter, Yelp)  |
+| (OpenWeather, Yelp) → (Twitter, Google Maps)  |
+| (Google Maps, Yelp) → (Twitter, OpenWeather)  |
 
-2-order dataset|
----- | 
-( Flickr, Google AdWords) -> (Google Maps, GeoNames)
-( Flickr, Google Maps) -> ( Google AdWords, GeoNames)
-( Flickr, GeoNames) -> ( Google AdWords, Google Maps)
-( Google AdWords, Google Maps) -> (Flickr, GeoNames)
-( Google AdWords, GeoNames) -> (Flickr, Google Maps)
-( Google Maps, GeoNames) -> (Flickr, Google AdWords)
-
-3-order dataset|
----- | 
-(Flickr, Google AdWords, Google Maps) -> (GeoNames)
-(Google AdWords, Google Maps, GeoNames) -> (Flickr)
-(Flickr, Google Maps, GeoNames) -> (Google AdWords)
-(Flickr, Google AdWords, GeoNames) -> (Google Maps)
-
-If all application are processed along these lines based on their invoked APIs, you end up with all the datasets for 1-, 2-, and 3-order recommendations.
+| 3-order Recommendation Dataset               |
+|----------------------------------------------|
+| (Twitter, OpenWeather, Google Maps) → (Yelp) |
+| (OpenWeather, Google Maps, Yelp) → (Twitter) |
+| (Twitter, Google Maps, Yelp) → (OpenWeather) |
+| (Twitter, OpenWeather, Yelp) → (Google Maps) |
