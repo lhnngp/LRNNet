@@ -1,3 +1,10 @@
+# Component
+- dataloader.py: Responsible for data loading and preprocessing.
+- main.py: The main entry point of the project.
+- metrics.py: Contains the evaluation metrics used in the project.
+- models.py: Defines the neural network architecture used in the project.
+- utils.py: Contains utility functions used in the project.
+
 # Construct experimental datasets
 
 
