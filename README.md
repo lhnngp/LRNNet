@@ -1,7 +1,7 @@
 # Instruction
 To run the project, simply execute the main.py file.
 
-Before running the code, please make sure that all required dependencies are installed and that the dataset files are placed in the correct directory as expected by the dataloader.
+Before running the code, please make sure that all required dependencies are installed.
 
 
 # Component
