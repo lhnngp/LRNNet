@@ -10,7 +10,7 @@ Before running the code, please make sure that all required dependencies are ins
 - metrics.py: Contains the evaluation metrics used in the project.
 - models.py: Defines the neural network architecture used in the project.
 - utils.py: Contains utility functions used in the project.
-- train-queries.pkl, train-answers.pkl: Traing set.
+- train-queries.pkl, train-answers.pkl: Trainng set.
 - valid-queries.pkl, valid-answers.pkl: Validation set.
 - test-queries.pkl, test-answers.pkl: Test set.
 
