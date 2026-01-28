@@ -5,7 +5,7 @@
 - models.py: Defines the neural network architecture used in the project.
 - utils.py: Contains utility functions used in the project.
 - train-queries.pkl, train-answers.pkl: Traing set.
-- val-queries.pkl, val-answers.pkl: Validation set.
+- valid-queries.pkl, valid-answers.pkl: Validation set.
 - test-queries.pkl, test-answers.pkl: Test set.
 
 # Experimental Dataset Construction
